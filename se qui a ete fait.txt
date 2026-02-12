@@ -1,0 +1,33 @@
+1. Ergonomie Mobile (Menu "3 petits points")
+Ajout du bouton ⋮ : Nous avons intégré un bouton de menu contextuel dans chaque ligne de musique (via ui.js).
+
+Adaptation Responsive :
+
+Sur Ordinateur : Le bouton ⋮ est caché, les icônes d'action rapide (Ajout, Like, etc.) restent visibles.
+
+Sur Mobile : Les icônes d'action rapide sont cachées pour alléger l'interface, seul le bouton ⋮ reste visible pour accéder à toutes les options.
+
+2. Bouton "Ajouter à la Playlist" (+)
+Intégration : Nous avons ajouté ce bouton à deux endroits stratégiques :
+
+La barre de lecture principale (en bas).
+
+L'écran "Mode Focus" (plein écran).
+
+Intelligence Visuelle :
+
+L'icône est un + (cercle plus) quand le titre n'est pas dans une playlist.
+
+Elle devient un ✓ (cercle coché) et prend la couleur de ton thème si le titre est déjà ajouté.
+
+Paramétrage : Ajout d'une option dans les Paramètres > Mode Focus pour afficher ou masquer ce bouton selon tes préférences.
+
+3. Corrections Graphiques (Mode Focus)
+Alignement des contrôles : Nous avons corrigé le CSS du Mode Focus pour que les 5 boutons (Cœur, Précédent, Play, Suivant, Playlist) soient parfaitement centrés et espacés, sans casser l'affichage.
+
+Superposition (Z-Index) : Nous avons réglé le problème de la fenêtre "Ajouter à une playlist" qui s'ouvrait derrière la pochette. Elle s'affiche maintenant correctement au premier plan.
+
+4. Amélioration de la Réactivité (UX)
+Mise à jour instantanée (Ajout) : Quand tu ajoutes une musique à une playlist, le bouton passe instantanément de + à ✓ sans avoir besoin de recharger la page.
+
+Mise à jour instantanée (Paramètres) : Quand tu actives/désactives les boutons "Cœur" ou "Playlist" dans les réglages, ils apparaissent ou disparaissent immédiatement du Mode Focus.
