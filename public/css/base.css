@@ -1,0 +1,59 @@
+/* ========================================
+   1. BASE & RESET
+   ======================================== */
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0; 
+    background: var(--bg); 
+    color: var(--text); 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    overflow: hidden; /* Empêche le scroll global du body */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Gestion Image de fond */
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    /* Transition douce quand on change de mode */
+    transition: background 0.5s ease-in-out;
+}
+
+/* Fond noir global (Overlay par dessus l'image) */
+body::before {
+    content: "";
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    /* Utilise la variable modifiée par JS */
+    background: rgba(5, 5, 5, var(--bg-overlay, 0.95));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Canvas des particules (Juste au dessus du fond) */
+#particles-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 1; 
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--card); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--card-hover); }
+
+/* ========================================
+   ICÔNES (LUCIDE)
+   ======================================== */
+.lucide { width: 20px; height: 20px; vertical-align: middle; }
+.fill-current { fill: var(--accent); stroke: var(--accent); }

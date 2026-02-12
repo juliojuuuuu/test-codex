@@ -1,0 +1,133 @@
+/* ========================================
+   NOUVEAUX PARAMÈTRES (GRID LAYOUT)
+   ======================================== */
+.settings-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.settings-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.settings-box:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.setting-item {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+    border-radius: 8px;
+}
+
+.setting-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
+/* ========================================
+   BOUTONS SAUVEGARDE & RESTAURATION
+   ======================================== */
+
+.dash-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Fond subtil */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px; /* Espace entre les boutons */
+}
+
+/* Effet au survol (Hover) */
+.dash-action:hover {
+    transform: translateY(-3px); /* Remonte légèrement */
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent); /* La bordure prend la couleur du thème */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre portée */
+}
+
+/* L'icône (Disquette / Boîte) */
+.da-icon {
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3); /* Fond sombre derrière l'emoji */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.dash-action:hover .da-icon {
+    transform: scale(1.1); /* L'icône grossit un peu au survol */
+}
+
+/* Le texte */
+.da-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.da-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.da-info p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: var(--text-muted, #aaa);
+}
+
+/* --- Styles spécifiques (Couleurs au survol) --- */
+
+/* Bouton Sauvegarder : Devient légèrement vert/accent */
+.da-save:hover .da-icon {
+    background: rgba(46, 204, 113, 0.2); 
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+/* Bouton Restaurer : Devient légèrement bleu/accent */
+.da-load:hover .da-icon {
+    background: rgba(52, 152, 219, 0.2);
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Petit effet de clic */
+.dash-action:active {
+    transform: scale(0.98);
+}

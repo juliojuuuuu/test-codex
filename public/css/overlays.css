@@ -1,0 +1,36 @@
+/* ========================================
+   5. OVERLAYS (Modales, Popups)
+   ======================================== */
+
+/* Modale */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); z-index: 6000 !important; align-items: center; justify-content: center; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content { background: var(--card); width: 90%; max-width: 400px; border-radius: 15px; padding: 25px; border: 1px solid #333; }
+.create-pl-content { text-align: center; max-width: 350px; background: linear-gradient(145deg, var(--card), #0a0a0a); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+.modal-title { margin-top: 0; font-size: 22px; background: linear-gradient(45deg, #fff, var(--accent)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.modal-input { width: 100%; max-width: 100%; padding: 12px 15px; margin-bottom: 25px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 10px; color: white; font-size: 16px; outline: none; transition: all 0.3s ease; text-align: center; box-sizing: border-box; }
+.modal-input:focus { border-color: var(--accent); box-shadow: 0 0 15px var(--accent-glow); background: rgba(255,255,255,0.08); transform: scale(1.02); }
+
+.modal-actions { display: flex; gap: 15px; justify-content: center; }
+.modal-actions button { flex: 1; padding: 12px; }
+
+/* Liste Playlist dans Modale */
+#modal-pl-list { display: flex; flex-direction: column; gap: 10px; max-height: 300px; overflow-y: auto; margin-bottom: 20px; }
+.modal-pl-item { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 15px; transition: all 0.2s ease; border: 1px solid transparent; font-size: 15px; font-weight: 500; }
+.modal-pl-item:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--accent); transform: translateX(5px); }
+.modal-pl-item::before { content: "🎵"; font-size: 18px; opacity: 0.7; }
+
+/* Toasts */
+.toast { position: fixed; bottom: 110px; right: 20px; background: var(--card); color: white; padding: 15px 20px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; transform: translateY(20px); transition: all 0.3s ease; z-index: 3000; max-width: 300px; border-left: 4px solid var(--accent); }
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast-success { border-left-color: var(--success); }
+.toast-error { border-left-color: var(--error); }
+.toast-info { border-left-color: var(--warning); }
+
+/* Menu Contextuel */
+.context-menu { display: none; position: absolute; z-index: 10000; width: 200px; background: #181818; border: 1px solid #333; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); padding: 5px 0; animation: fadeIn 0.1s ease-out; }
+.context-item { padding: 10px 15px; font-size: 14px; color: #eee; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background 0.1s; }
+.context-item:hover { background: var(--accent); color: white; }
+.context-divider { height: 1px; background: #333; margin: 5px 0; }
